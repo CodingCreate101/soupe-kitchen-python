@@ -1,3 +1,25 @@
-<h1>Tasty  {{ recipe }} Recipe!</h1>
+{% if recipe %}
+<h1>Tasty {{ recipe.title }} Recipe!</h1>
+<br />
+<br />
 
+Duration: {{recipe.duration}}
+
+<br />
+<br />
+
+<ul>
+  {% for eachStep in recipe.steps %}
+  <li>{{ eachStep }}</li>
+  {% endfor %}
+</ul>
+
+{% else %}
+<p>We don't have that recipe, yet</p>
+
+{% endif %}
+
+<br />
+<br />
+<br />
 <a href="/">Main menu</a>
